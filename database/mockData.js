@@ -1,74 +1,17 @@
 const faker = require('faker');
-// const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/airbnbInfo', { useNewUrlParser: true });
 const db = require('./index.js');
-
-// let dbSchema = mongoose.Schema({
-//     city: String,
-//     title: String,
-//     hostImage: String,
-//     roomInfo: String,
-//     numberOfGuests: Number,
-//     numberOfBedrooms: Number,
-//     NumberOfBeds: Number,
-//     NumberOfBaths: Number,
-//     isSuperhost: Boolean,
-//     isGreatLocation: Boolean,
-//     isSparklingClean: Boolean,
-//     isGreatCheckIn: Boolean,
-//     isSelfCheckIn: Boolean,
-//     description: String,
-//     amenities: Object,
-//     sleepingArrangements: Object,
-// });
-
-// let db = mongoose.model('Listing', dbSchema);
-
 
 let titleRandom = ['Perfectly located', 'Light & spacious garden flat', 'Private Modern Guesthouse', 'Ocean View Hideaway', 'Perfect Haven by Golden Gate', 'Private Backyard Cottage', 'Sunny Room Heart of', 'Luxury Gold Coast', 'Central Surfers Studio OceanView', 'Broken Head Bodhi Treehouse', 'Mountain tiny house', 'Blue Mountains Cottage', 'The Copa Cabana', 'The Tree House', 'Stroll Around Victoria Park', 'Entire Home with Opera House views', 'Luxury Apartment in the heart of', 'Stylish inner-city home', 'Little Paradise', 'Stunning River View' ]; 
 
 let roomInfoRandom = ['Private room', 'Entire guesthouse', 'Entire guestsuite', 'Entire House'];
 
-function isSuperhost() {
-    return Math.random() > 0.5;
-}
-
-function isGreatLocation() {
-    return Math.random() > 0.5;
-}
-
-function isSparklingClean() {
-    return Math.random() > 0.5;
-}
-
-function isGreatCheckIn() {
-    return Math.random() > 0.5;
-}
-
-function isSelfCheckIn() {
-    return Math.random() > 0.5;
-}
-
-function hasKitchen() {
-    return Math.random() > 0.5;
-}
-
-function hasHairDryer() {
-    return Math.random() > 0.5;
-}
-
-function hasBedLinens() {
-    return Math.random() > 0.5;
-}
-
-function hasPillowsBlankets() {
+function booleanGenerator() {
     return Math.random() > 0.5;
 }
 
 function generateListing() {
     let titleRandomArray = titleRandom[Math.floor(Math.random()*titleRandom.length)];
     let roomInfoRandomArray = roomInfoRandom[Math.floor(Math.random()*roomInfoRandom.length)];
-    // console.log('ROOMINFO RANDOM ARRAY',roomInfoRandomArray);
     let hostImage = Math.floor(Math.random()*31);
     function numberOfGuests() {
         if (roomInfoRandomArray === 'Private room') {
@@ -112,11 +55,11 @@ function generateListing() {
         numberOfBedrooms: bedrooms,
         numberOfBeds: numberOfBeds(),
         numberOfBaths: numberOfBaths(),
-        isSuperhost: isSuperhost(),
-        isGreatLocation: isGreatLocation(),
-        isSparklingClean: isSparklingClean(),
-        isGreatCheckIn: isGreatCheckIn(),
-        isSelfCheckIn: isSelfCheckIn(),
+        isSuperhost: booleanGenerator(),
+        isGreatLocation: booleanGenerator(),
+        isSparklingClean: booleanGenerator(),
+        isGreatCheckIn: booleanGenerator(),
+        isSelfCheckIn: booleanGenerator(),
         description: faker.lorem.paragraph() + faker.lorem.paragraph(),
         amenities: {
             basic: {
@@ -127,12 +70,12 @@ function generateListing() {
                 hasHeating: true
             },
             dining: {
-                hasKitchen: hasKitchen()
+                hasKitchen: booleanGenerator()
             },
             bedAndBath: {
-                hasHairDryer: hasHairDryer(),
-                hasBedLinens: hasBedLinens(),
-                hasPillowsBlankets: hasPillowsBlankets()
+                hasHairDryer: booleanGenerator(),
+                hasBedLinens: booleanGenerator(),
+                hasPillowsBlankets: booleanGenerator()
             }
         },
         sleepingArrangements: {
