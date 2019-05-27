@@ -137,16 +137,244 @@ hr {
     line-height: 1.143;
     font-weight: 600;
 }
+.space {
+    visibility: hidden;
+    -moz-transition: 0.75s;
+    -o-transition: 0.75s;
+    transition: 0.75s;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    top: -10px;
+    position: relative;
+}
+.space-visible {
+    visibility: visible;
+    /* -moz-transition: 0.75s;
+    -o-transition: 0.75s;
+    transition: 0.75s; */
+    opacity: 1;
+    height: auto;
+    top: 0;
+    position: relative;
+}
+
 .space-onclick {
     color: #008489;
     font-weight: 600;
     display: flex;
     align-items: baseline;
+    cursor: pointer;
+    transition-delay: 2s;
+}
+.space-onclick:hover {
+    text-decoration: underline;
 }
 .host {
     color: #008489;
     font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.host:hover {
+    text-decoration: underline;
 }
 .arrow-svg {
     margin-left: 8px;
+}
+.amenities-main {
+    font-weight: 700;
+
+}
+.two-svg1 {
+    display: grid;
+    font-weight: 400;
+    grid-template-columns: 60% 40%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.icon1 {
+    display: flex;
+}
+.icon2 {
+    display: flex;
+}
+.kitchen {
+    margin-left: 10px;
+    line-height: 1.375em;
+}
+.tv {
+    margin-left: 10px;
+    line-height: 1.375em;
+    font-size: 16px;
+} 
+.two-svg2 {
+    display: grid;
+    font-weight: 400;
+    grid-template-columns: 60% 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.icon3, .icon4 {
+    display: flex;
+}
+.wifi {
+    margin-left: 10px;
+    line-height: 1.375em;
+}
+.laptop-space {
+    margin-left: 10px;
+}
+.all-amenities {
+    color: #008489;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+.all-amenities:hover {
+    text-decoration: underline;
+}
+
+.close-button {
+    border-radius:50%;
+    /* width: 10%;
+    height: 10%; */
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    margin-bottom: 24px;
+    margin-left: 30px;
+
+}
+.all-amenities-main {
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    color: #484848;
+    padding-top: 2px;
+    margin-left: 30px;
+
+}
+.amenities-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25em;
+    padding-top: 2px;
+    padding-bottom: 24px; 
+}
+.basic-title {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.wifi-amenity {
+    line-height: 1.43;
+    font-size: 16px;
+    font-weight: 150;
+    padding-bottom: 8px;
+}
+.wifi-content {
+    font-size: 14px;
+    font-weight: 150;
+    padding-bottom: 20px;
+}
+.laptop-amenity {
+    line-height: 1.43;
+    font-size: 16px;
+    font-weight: 150;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+.laptop-content {
+    font-size: 14px;
+    font-weight: 150;
+    padding-bottom: 20px;
+}
+.essentials-amenity {
+    line-height: 1.43;
+    font-size: 16px;
+    font-weight: 150;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+.essentials-content {
+    font-size: 14px;
+    font-weight: 150;
+    padding-bottom: 20px;
+}
+.heating-amenity {
+    line-height: 1.43;
+    font-size: 16px;
+    font-weight: 150;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+.heating-content {
+    font-size: 14px;
+    font-weight: 150;
+    padding-bottom: 20px;
+}
+.dining-title {
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.kitchen-amenity {
+    line-height: 1.43;
+    font-size: 16px;
+    font-weight: 150;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+.kitchen-content {
+    font-size: 14px;
+    font-weight: 150;
+    padding-bottom: 20px;
+}
+.bed-title {
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.bed-amenity {
+    line-height: 1.43;
+    font-size: 16px;
+    font-weight: 150;
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+.bed-content {
+    font-size: 14px;
+    font-weight: 150;
+    padding-bottom: 20px;
+}
+.sleeping-title {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.sleeping-border {
+    border: 1px solid #EBEBEB;
+    border-top-color: rgb(235, 235, 235);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(235, 235, 235);
+    border-right-style: solid;
+    border-bottom-width: 1px;
+    height: 100%;
+    width: 50%; 
+    padding: 24px;
+    margin-bottom: 20px;
+}
+.bedroom-num-sleeping {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.375em;
+    color: #484848;
+    padding-top: 20px;
+}
+@media screen and (max-width:500px) {
+    .close-button {
+        background-color:red;
+    }
 }

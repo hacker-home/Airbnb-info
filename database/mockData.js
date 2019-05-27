@@ -66,17 +66,16 @@ function generateListing() {
                 hasWiFi: true,
                 hasEssentials: true,
                 hasCable: true,
-                hasIndoorFirePlace: true,
-                hasHeating: true
+                hasLaptopSpace: true,
+                hasHeating: true,
+                hasParking: true
             },
             dining: {
-                hasKitchen: booleanGenerator()
+                hasKitchen: true
             },
             bedAndBath: {
-                hasHairDryer: booleanGenerator(),
-                hasBedLinens: booleanGenerator(),
-                hasPillowsBlankets: booleanGenerator()
-            }
+                hasPillowsBlankets: true
+            },
         },
         sleepingArrangements: {
             bedroom: bedrooms
