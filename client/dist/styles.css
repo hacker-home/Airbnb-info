@@ -5,7 +5,7 @@ hr {
     border-bottom-style: solid;
 }
 #main {
-    width: 78%;
+    width: 58%;
     margin-left: 50px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-size: 16px;
@@ -13,6 +13,7 @@ hr {
     color: #484848;
     background-color: #fff;
     -webkit-font-smoothing: antialiased;
+    min-width: 359px;
 }
 
 .title-summary-div {
@@ -48,7 +49,6 @@ hr {
     line-height: 20.02px;
     display: flex;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 .icon {
     display: inline;
@@ -66,15 +66,25 @@ hr {
     font-weight: 600 !important;
     line-height: 1.375em !important;
     color: #484848 !important;
-    display: inline-block !important;
 }
-.guest-info div{
+.guest-info-block {
+    width: 100%;
     display: inline-block;
-    padding-right: 30px;
 }
+.guest-info {
+    padding-right: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.guest-info:first-child { 
+    text-align: left;
+  }
 
 .isSuperhost {
     display: flex;
+    margin-top:20px;
+    margin-bottom: 20px;
 }
 .host-info {
     margin-left: 10px;
@@ -83,25 +93,32 @@ hr {
 .checkin-experience {
     display: flex;
     align-items: baseline;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .checkin-info {
     margin-left: 10px;
     line-height: 1.375em;
 }
+.checkin-content {
+    line-height: 1.375em;
+}
 .cleaning {
     display: flex;
     align-items: baseline;
-    margin-top: 20px;
+    
 }
 .cleaning-info {
     margin-left: 10px;
     line-height: 1.375em;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .checkin-title {
     font-size: 16px;
     line-height: 1.143;
     font-weight: 600;
-    margin-top: 20px;
+    
 }
 
 .clean-title {
@@ -234,7 +251,9 @@ hr {
 .all-amenities:hover {
     text-decoration: underline;
 }
-
+.all-amenities-main {
+    width: 50%;
+}
 .close-button {
     border-radius:50%;
     /* width: 10%;
