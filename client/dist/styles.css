@@ -4,7 +4,7 @@ hr {
     border-bottom-width: 0.1px;
     border-bottom-style: solid;
 }
-#main {
+.main {
     width: 58%;
     margin-left: 50px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
@@ -223,7 +223,6 @@ hr {
 .tv {
     margin-left: 10px;
     line-height: 1.375em;
-    font-size: 16px;
 } 
 .two-svg2 {
     display: grid;
