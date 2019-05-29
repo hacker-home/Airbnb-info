@@ -8,7 +8,6 @@
     "start": "nodemon server/index.js",
     "test": "jest",
     "seed": "node database/mockData.js"
-
   },
   "repository": {
     "type": "git",
@@ -54,6 +53,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-modal": "^3.8.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "styled-components": "^4.2.0"
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import css from '../../dist/styles.css';
 
 const customStyles = {
     content : {
@@ -78,65 +79,65 @@ class Amenities extends React.Component {
         ><path d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22" fillRule="evenodd"></path></svg>
 
         return (
-            <section className="amenities-main">
+            <section className={css['amenities-main']}>
              <br/>
              Amenities
              
-             <div className="amenities-icon">
-                <div className="two-svg1">
-                    <div className="icon1">
-                        <div className="kitchen-icon">{svgKitchen}</div>
-                        <div className="kitchen">Kitchen</div>
+             <div className={css['amenities-icon']}>
+                <div className={css['two-svg1']}>
+                    <div className={css.icon1}>
+                        <div className={css['kitchen-icon']}>{svgKitchen}</div>
+                        <div className={css.kitchen}>Kitchen</div>
                     </div>
-                    <div className="icon2">
-                        <div className="tv-icon">{svgTv}</div>
-                        <div className="tv">TV</div>
+                    <div className={css.icon2}>
+                        <div className={css['tv-icon']}>{svgTv}</div>
+                        <div className={css['tv']}>TV</div>
                     </div>
                 </div>
-                <div className="two-svg2">
-                    <div className="icon3">
-                        <div className="wifi-icon">{svgWifi}</div>
-                        <div className="wifi">Wifi</div>
+                <div className={css['two-svg2']}>
+                    <div className={css.icon3}>
+                        <div className={css['wifi-icon']}>{svgWifi}</div>
+                        <div className={css['wifi']}>Wifi</div>
                     </div>
-                    <div className="icon4">
-                        <div className="laptop-icon">{svgLaptop}</div>
-                        <div className="laptop-space">Laptop friendly workspace</div>
+                    <div className={css.icon4}>
+                        <div className={css['laptop-icon']}>{svgLaptop}</div>
+                        <div className={css['laptop-space']}>Laptop friendly workspace</div>
                     </div>
                 </div>
                 <div>
 
                 </div>
              </div>
-             <div className="all-amenities" onClick={this.onAllAmenitiesClick}>Show all 6 amenities</div>
+             <div className={css['all-amenities']} onClick={this.onAllAmenitiesClick}>Show all 6 amenities</div>
              <hr/>
              <Modal style={customStyles}
                 isOpen={this.state.showModal}
                 contentLabel="Amenities"
                 >
-                <button className="close-button" onClick={this.handleCloseModal}>{svgButton}</button>
-                <div className="all-amenities-main">
-                    <div className="amenities-title">Amenities</div>
+                <button className={css['close-button']} onClick={this.handleCloseModal}>{svgButton}</button>
+                <div className={css['all-amenities-main']}>
+                    <div className={css['amenities-title']}>Amenities</div>
                     <section>
-                        <div className="basic-title">Basic</div>
-                            <div className="wifi-amenity">Wifi</div>
-                            <div className="wifi-content">{this.iconContent.wifi}</div>
+                        <div className={css['basic-title']}>Basic</div>
+                            <div className={css['wifi-amenity']}>Wifi</div>
+                            <div className={css['wifi-content']}>{this.iconContent.wifi}</div>
                             <hr />
-                            <div className="laptop-amenity">Laptop friendly workspace</div>
-                            <div className="laptop-content">{this.iconContent["Laptop friendly workspace"]}</div>
+                            <div className={css['laptop-amenity']}>Laptop friendly workspace</div>
+                            <div className={css['laptop-content']}>{this.iconContent["Laptop friendly workspace"]}</div>
                             <hr />
-                            <div className="essentials-amenity">Essentials</div>
-                            <div className="essentials-content">{this.iconContent.essentials}</div>
+                            <div className={css['essentials-amenity']}>Essentials</div>
+                            <div className={css['essentials-content']}>{this.iconContent.essentials}</div>
                             <hr />
-                            <div className="heating-amenity">Heating</div>
-                            <div className="heating-content">{this.iconContent.heating}</div>
+                            <div className={css['heating-amenity']}>Heating</div>
+                            <div className={css['heating-content']}>{this.iconContent.heating}</div>
                             <hr />
-                        <div className="dining-title">Dining</div>
-                            <div className="kitchen-amenity">Kitchen</div>
-                            <div className="kitchen-content">{this.iconContent.kitchen}</div>
+                        <div className={css['dining-title']}>Dining</div>
+                            <div className={css['kitchen-amenity']}>Kitchen</div>
+                            <div className={css['kitchen-content']}>{this.iconContent.kitchen}</div>
                             <hr />
-                        <div className="bed-title">Bed and bath</div>
-                            <div className="bed-amenity">Bed linens</div>    
-                            <div className="bed-content">{this.iconContent.bedlinens}</div>
+                        <div className={css['bed-title']}>Bed and bath</div>
+                            <div className={css['bed-amenity']}>Bed linens</div>    
+                            <div className={css['bed-content']}>{this.iconContent.bedlinens}</div>
                     </section>
                 </div>
             </Modal>

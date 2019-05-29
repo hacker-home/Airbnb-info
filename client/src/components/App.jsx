@@ -6,6 +6,7 @@ import SparklingClean from './SparklingClean.jsx';
 import GreatLocation from './GreatLocation.jsx';
 import SelfCheckin from './SelfCheckin.jsx';
 import Amenities from './Amenities.jsx';
+import css from '../../dist/styles.css';
 
 class App extends React.Component {
     constructor() {
@@ -48,31 +49,31 @@ class App extends React.Component {
         let {title,city, hostImage, roomInfo, numberOfGuests, numberOfBedrooms,numberOfBaths,numberOfBeds,isSuperhost,isGreatCheckIn,isSparklingClean,isGreatLocation,isSelfCheckIn, description} = this.state.listings;
         
         return (
-            <div id="main">
-                <div className="title-summary-div">
-                    <div className="innercontent-div">
-                        <div className="title">
+            <div className={css.main}>
+                <div className={css['title-summary-div']}>
+                    <div className={css['innercontent-div']}>
+                        <div className={CSS.title}>
                             <h1><span>{title}</span></h1>
                         </div>
-                        <div className="city-name">
+                        <div className={css['city-name']}>
                             {city}
                         </div>
                     </div>
-                    <div className="host-image"><img className="host-image" src={hostImage}/>
+                    <div className={css['host-image']}><img className={css['host-image']} src={hostImage}/>
                     </div>   
                 </div>
-                <div className="highlights">
-                    <div className="room-info">
-                        <div className="icon"><i className="fas fa-home fa-xs"></i></div>
-                        <div className="room-description">
-                        <div className="room-title">
+                <div className={css.highlights}>
+                    <div className={css['room-info']}>
+                        <div className={css.icon}><i className="fas fa-home fa-xs"></i></div>
+                        <div className={css['room-description']}>
+                        <div className={css['room-title']}>
                             {roomInfo}
                         </div>
-                        <div className = "guest-info-block">
-                            <div className = "guest-info">{numberOfGuests} guests</div>
-                            <div className = "guest-info">{numberOfBedrooms} {numberOfBedrooms === 1? 'bedroom':'bedrooms'}</div>
-                            <div className = "guest-info">{numberOfBeds} {numberOfBeds === 1? 'bed':'beds'}</div>
-                            <div className = "guest-info">{numberOfBaths} {numberOfBaths === 1? 'bath':'baths'}</div>
+                        <div className = {css['guest-info-block']}>
+                            <div className = {css['guest-info']}>{numberOfGuests} guests</div>
+                            <div className = {css['guest-info']}>{numberOfBedrooms} {numberOfBedrooms === 1? 'bedroom':'bedrooms'}</div>
+                            <div className = {css['guest-info']}>{numberOfBeds} {numberOfBeds === 1? 'bed':'beds'}</div>
+                            <div className = {css['guest-info']}>{numberOfBaths} {numberOfBaths === 1? 'bath':'baths'}</div>
                         </div>
                         </div>
                     </div>
@@ -84,7 +85,7 @@ class App extends React.Component {
                     {isSelfCheckIn && <SelfCheckin/>}
                 </div>
                 <hr/>
-                <div className="space-intro">
+                <div className={css['space-intro']}>
                     <p>New renovated Garden Suite with separated entrance, private Living room, private Bathroom</p>
                 </div>
                 {/* {this.state.displaySpaceText ? ( */}
@@ -93,23 +94,23 @@ class App extends React.Component {
                          <p>{description}</p>
                     </div>
                 {/* ): null} */}
-                <div className="space-onclick" onClick={this.displaySpaceInfo}>
+                <div className={css['space-onclick']} onClick={this.displaySpaceInfo}>
                     {this.state.displaySpaceText ? 'Hide' : 'Read more about the space'}
-                    <div className="arrow-svg">
+                    <div className={css['arrow-svg']}>
                         {svgIcon}
                     </div>
                 </div>
                 <br />
-                <p className="host">Contact host</p>
+                <p className={css.host}>Contact host</p>
                 <hr/>
                 <div>
                     <Amenities />
                 </div>
-                <section className="sleeping-block">
-                    <div className="sleeping-title">Sleeping Arrangements</div>
-                    <div className="sleeping-border">
-                        <div className="svg-bed">{svgBed}</div>
-                        <div className="bedroom-num-sleeping">{numberOfBedrooms === 1? 'Bedroom':'Bedrooms'} {numberOfBedrooms}</div>
+                <section className={css['sleeping-block']}>
+                    <div className={css['sleeping-title']}>Sleeping Arrangements</div>
+                    <div className={css['sleeping-border']}>
+                        <div className={css['svg-bed']}>{svgBed}</div>
+                        <div className={css['bedroom-num-sleeping']}>{numberOfBedrooms === 1? 'Bedroom':'Bedrooms'} {numberOfBedrooms}</div>
                     </div>
                     <hr />
                </section>
