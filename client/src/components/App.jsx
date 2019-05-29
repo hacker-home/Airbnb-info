@@ -19,7 +19,7 @@ class App extends React.Component {
 
     componentDidMount() {
         $.get({
-            url: '/listings/3',
+            url: `/listings/${window.location.href.match(/id\s*=\s*(.*)/)[1]}`,
             success: (data) => {
                 this.setState({listings: data});
             }
@@ -31,7 +31,6 @@ class App extends React.Component {
         })
     }
     render() {
-        
         let svgIcon = <svg viewBox="0 0 18 18" role="presentation" aria-hidden="true" focusable="false" style={{
             height:'10px',
             width:'10px',
@@ -44,7 +43,7 @@ class App extends React.Component {
             width: '24px',
             fill: '#484848'
         }}
-        ><path d="m23.96 14.81-2.96-7.41v-5.02a1.39 1.39 0 0 0 -1.39-1.38h-15.22c-.77 0-1.39.62-1.39 1.38v5.02l-2.96 7.41-.04.19v5.61c0 .64.43 1.17 1.01 1.33 0 .02-.01.04-.01.06v1.5a.5.5 0 0 0 1 0v-1.5h20v1.5a.5.5 0 0 0 1 0v-1.5c0-.02-.01-.04-.01-.06a1.39 1.39 0 0 0 1.01-1.33v-5.61zm-19.96-12.43c0-.21.17-.38.39-.38h15.22a.39.39 0 0 1 .39.39v4.61h-1v-1.61c0-.77-.62-1.39-1.39-1.39h-3.21c-.78 0-1.4.62-1.4 1.39v1.61h-2v-1.61c0-.77-.62-1.39-1.39-1.39h-3.22c-.77 0-1.39.62-1.39 1.39v1.61h-1zm14 3.01v3.21a.39.39 0 0 1 -.39.39h-3.21a.39.39 0 0 1 -.4-.38v-3.22a.39.39 0 0 1 .39-.39h3.21a.39.39 0 0 1 .39.39zm-8 0v3.21a.39.39 0 0 1 -.39.4h-3.22a.39.39 0 0 1 -.39-.39v-3.22a.39.39 0 0 1 .39-.39h3.21a.39.39 0 0 1 .39.39zm-6.16 2.61h1.16v.61c0 .77.62 1.39 1.39 1.39h3.21c.78 0 1.4-.62 1.4-1.39v-.61h2v .61c0 .78.62 1.39 1.39 1.39h3.21c.78 0 1.4-.62 1.4-1.39v-.61h1.16l2.8 7h-21.92zm19.16 12.61c0 .21-.18.39-.39.39h-21.22a.39.39 0 0 1 -.39-.39v-4.61h22z" fill-rule="evenodd"></path></svg>;
+        ><path d="m23.96 14.81-2.96-7.41v-5.02a1.39 1.39 0 0 0 -1.39-1.38h-15.22c-.77 0-1.39.62-1.39 1.38v5.02l-2.96 7.41-.04.19v5.61c0 .64.43 1.17 1.01 1.33 0 .02-.01.04-.01.06v1.5a.5.5 0 0 0 1 0v-1.5h20v1.5a.5.5 0 0 0 1 0v-1.5c0-.02-.01-.04-.01-.06a1.39 1.39 0 0 0 1.01-1.33v-5.61zm-19.96-12.43c0-.21.17-.38.39-.38h15.22a.39.39 0 0 1 .39.39v4.61h-1v-1.61c0-.77-.62-1.39-1.39-1.39h-3.21c-.78 0-1.4.62-1.4 1.39v1.61h-2v-1.61c0-.77-.62-1.39-1.39-1.39h-3.22c-.77 0-1.39.62-1.39 1.39v1.61h-1zm14 3.01v3.21a.39.39 0 0 1 -.39.39h-3.21a.39.39 0 0 1 -.4-.38v-3.22a.39.39 0 0 1 .39-.39h3.21a.39.39 0 0 1 .39.39zm-8 0v3.21a.39.39 0 0 1 -.39.4h-3.22a.39.39 0 0 1 -.39-.39v-3.22a.39.39 0 0 1 .39-.39h3.21a.39.39 0 0 1 .39.39zm-6.16 2.61h1.16v.61c0 .77.62 1.39 1.39 1.39h3.21c.78 0 1.4-.62 1.4-1.39v-.61h2v .61c0 .78.62 1.39 1.39 1.39h3.21c.78 0 1.4-.62 1.4-1.39v-.61h1.16l2.8 7h-21.92zm19.16 12.61c0 .21-.18.39-.39.39h-21.22a.39.39 0 0 1 -.39-.39v-4.61h22z" fillRule="evenodd"></path></svg>;
 
         let {title,city, hostImage, roomInfo, numberOfGuests, numberOfBedrooms,numberOfBaths,numberOfBeds,isSuperhost,isGreatCheckIn,isSparklingClean,isGreatLocation,isSelfCheckIn, description} = this.state.listings;
         
@@ -69,11 +68,11 @@ class App extends React.Component {
                         <div className="room-title">
                             {roomInfo}
                         </div>
-                        <div className = "guest-info">
-                            <div>{numberOfGuests} guests</div>
-                            <div>{numberOfBedrooms} {numberOfBedrooms === 1? 'bedroom':'bedrooms'}</div>
-                            <div>{numberOfBeds} {numberOfBeds === 1? 'bed':'beds'}</div>
-                            <div>{numberOfBaths} {numberOfBaths === 1? 'bath':'baths'}</div>
+                        <div className = "guest-info-block">
+                            <div className = "guest-info">{numberOfGuests} guests</div>
+                            <div className = "guest-info">{numberOfBedrooms} {numberOfBedrooms === 1? 'bedroom':'bedrooms'}</div>
+                            <div className = "guest-info">{numberOfBeds} {numberOfBeds === 1? 'bed':'beds'}</div>
+                            <div className = "guest-info">{numberOfBaths} {numberOfBaths === 1? 'bath':'baths'}</div>
                         </div>
                         </div>
                     </div>

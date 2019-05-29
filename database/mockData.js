@@ -12,7 +12,8 @@ function booleanGenerator() {
 function generateListing() {
     let titleRandomArray = titleRandom[Math.floor(Math.random()*titleRandom.length)];
     let roomInfoRandomArray = roomInfoRandom[Math.floor(Math.random()*roomInfoRandom.length)];
-    let hostImage = Math.floor(Math.random()*31);
+    let hostImage = Math.floor(Math.random()* 30) + 1;
+    console.log('HOSTIMAGE: ',hostImage);
     function numberOfGuests() {
         if (roomInfoRandomArray === 'Private room') {
             return 2;
@@ -68,7 +69,6 @@ function generateListing() {
                 hasCable: true,
                 hasLaptopSpace: true,
                 hasHeating: true,
-                hasParking: true
             },
             dining: {
                 hasKitchen: true

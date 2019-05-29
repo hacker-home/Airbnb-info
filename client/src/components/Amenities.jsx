@@ -41,7 +41,6 @@ class Amenities extends React.Component {
     }
     
     render() {
-        // const {listings} = this.props;
         let svgKitchen = <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" 
         style={{
             height: '19px',
