@@ -6,7 +6,9 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "start": "nodemon server/index.js",
-    "test": "jest"
+    "test": "jest",
+    "seed": "node database/mockData.js"
+
   },
   "repository": {
     "type": "git",
