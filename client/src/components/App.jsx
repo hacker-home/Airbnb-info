@@ -89,7 +89,7 @@ class App extends React.Component {
                     <p>New renovated Garden Suite with separated entrance, private Living room, private Bathroom</p>
                 </div>
                 {/* {this.state.displaySpaceText ? ( */}
-                    <div className={this.state.displaySpaceText ? "space space-visible" : "space"}>
+                    <div className={this.state.displaySpaceText ? `${css.space} ${css['space-visible']}` : css.space}>
                          <p><b>The Space</b></p>
                          <p>{description}</p>
                     </div>
