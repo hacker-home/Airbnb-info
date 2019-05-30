@@ -2,9 +2,10 @@ const express = require('express');
 const app = express(); 
 const bodyParser = require('body-parser')
 const db = require('../database/index.js');
-
+const cors = require('cors');
 const port = 3002;
 
+app.use(cors());
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.use(bodyParser.urlencoded({ extended: false }))
