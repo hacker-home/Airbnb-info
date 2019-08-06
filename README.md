@@ -24,9 +24,9 @@ $ npm run react-dev
 ```
 
 ## <a id="requirements">Requirements</a>
-* npm
-* Node.js
-* Git
+* [npm](https://www.npmjs.com/)
+* [Node.js](https://nodejs.org/en/download/)
+* [Git](https://git-scm.com/)
 
 ## <a id="related_projects">Related Projects</a>
 * https://github.com/hacker-home/Airbnb-photos
